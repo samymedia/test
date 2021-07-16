@@ -49,7 +49,7 @@ export const getStaticProps = async ({ params }) => {
 export default function RecipeDetails({ recipe }) {
   if (!recipe) return <Skeleton />
 
-  const { featuredImage, title, cookingTime, ingredient, method } = recipe.fields
+  const { featuredImage, title, cookingTime, ingredients, method } = recipe.fields
 
   return (
     <div>
@@ -66,7 +66,7 @@ export default function RecipeDetails({ recipe }) {
         <p>Takes about { cookingTime } mins to cook.</p>
         <h3>Ingredients:</h3>
 
-        {ingredient.map(ing => (
+        {ingredients.map(ing => (
           <span key={ing}>{ ing }</span>
         ))}
       </div>
